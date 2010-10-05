@@ -1,9 +1,8 @@
 $:.unshift(File.dirname(__FILE__) + '/rquery/lib')
 require 'rquery'
 
-module RQuery
-  describe Browser, "connected to the web" do
-    include BrowserDsl
+  describe "connected to the web" do
+    include RQuery::BrowserDsl
 
     it "finds jquery documentation" do
       visit "http://www.bing.com"
@@ -25,4 +24,3 @@ module RQuery
       jquery("a:contains('Attribute Ends With')").length.should == 1
     end
   end
-end
